@@ -1,0 +1,1 @@
+{"name":"Mission Semester","short_name":"Mission Semester","lang":"hi","start_url":"./","display":"standalone","background_color":"#f7f6f2","theme_color":"#f7f6f2","description":"BTEUP प्रथम सेमेस्टर study planner"}
