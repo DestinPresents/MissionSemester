@@ -115,17 +115,14 @@ function home(){
  const today=localDate(); const total=getLogs()[today]?.total||0;
  return shell(`<section class="hero"><div class="pill">95%+ लक्ष्य • Consistency Mode</div><h2>आज का मिशन क्या है?</h2><p>College के बाद focused study, रोज़ का पढ़ाई रिकॉर्ड और exam-oriented preparation — सब एक जगह।</p></section>
  <div class="quickgrid">
-  <button class="card click" data-go="timetable"><b>🗓️ Daily + Weekly</b><span>आज और पूरे सप्ताह की पढ़ाई</span></button>
-  <button class="card click" data-go="syllabus"><b>📚 Complete Syllabus</b><span>पाँचों subjects का detailed syllabus</span></button>
-  <button class="card click" data-go="important"><b>★ Most Important</b><span>Priority topics + 5 marks practice</span></button>
+
   <button class="card click" data-go="plan"><b>🎯 95%+ Study Plan</b><span>साप्ताहिक पढ़ाई की strategy</span></button>
   <button class="card click" data-go="revision"><b>↻ Revision Planner</b><span>क्या और कब दोहराना है</span></button>
   <button class="card click" data-go="tips"><b>✓ Exam Tips</b><span>Paper में marks बचाने के practical rules</span></button>
-  <button class="card click" data-go="log"><b>◷ Study Log</b><span>आज कितना पढ़ा और date-wise history</span></button>
- </div>
+
  <div class="sectiontitle"><h3>आज की पढ़ाई</h3><span>${today}</span></div>
  <div class="card stat"><div><small>Total Study Time</small><strong id="todayTotal">${fmt(total)}</strong></div><button class="btn small" data-go="log">समय जोड़ें</button></div>
- <div class="sectiontitle"><h3>Subjects</h3><span>First Semester</span></div>
+
  <div class="grid">${Object.entries(subjects).map(([k,s])=>subjectCard(k,s)).join('')}</div>`);
 }
 function timetable(){return shell(`<div class="sectiontitle"><h3>Daily Timetable</h3><span>College: 8:00 AM – 4:30 PM</span></div><div class="card timeline">${daily.map(a=>`<div class="slot"><div class="time">${a[0]}</div><div class="activity">${a[1]}</div></div>`).join('')}</div><div class="sectiontitle"><h3>Weekly Timetable</h3><span>Balanced rotation</span></div><div class="weekgrid">${weekly.map(d=>`<div class="card daycard"><div class="dayhead"><h4>${d[0]}</h4><span class="mini">3 sessions</span></div><div class="session"><b>01</b><span>${d[1]}</span></div><div class="session"><b>02</b><span>${d[2]}</span></div><div class="session"><b>03</b><span>${d[3]}</span></div></div>`).join('')}</div>`);}
